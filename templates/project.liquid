@@ -1,0 +1,11 @@
+{% include "shared/header" %}	
+
+<a class="parent" href="{{ parent.permalink }}">&laquo; {{ parent.name }}</a>
+
+<h2>{{ name }}</h3>
+<p class="skills">{{ item.skills | join:' • ' }}</p>
+<section class="description">
+  {{ description }}
+</section>
+
+{% include "shared/footer" %}

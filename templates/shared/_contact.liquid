@@ -1,6 +1,49 @@
-{% for image in avatars %}
-<img src="{{image.path}}" alt="{{image.name}}" />
-{% endfor %}
-<h2>Kevin Muncie</h2>
-<p>kevin@kmuncie.com</p>
-<p>817-350-6116</p>
+{% comment %}
+	This is the logic needed to jump back to the root level and grab the avatar image.
+	It works no matter how deep in the stack you are.
+{% endcomment %}
+
+{% if slug != 'index' %}
+	<!-- If it has a parent... -->
+	{% if parent != null %}
+		<!-- This jumps us to the top of the tree -->
+		{% for a in ancestors limit:1 %}
+			{% for sib in a.siblings %}
+					{% if sib.slug == 'index' %}
+					<!-- Find the 'index' in the tree, assign it to a variable -->
+						{% assign root = sib %}
+					{% endif %}
+			{% endfor %}
+		{% endfor %}
+	{% else %}
+	<!-- No parent means it's on the same level as 'index' -->
+		{% for sib in siblings %}
+				{% if sib.slug == 'index' %}
+				<!-- Find 'index' again, assign it to the same variable -->
+					{% assign root = sib %}
+				{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	<!-- Now leverage that 'root' variable when rendering the image. -->
+	{% for image in root.avatars %}
+<section class="contact clearfix">
+	<img src="{{image.path}}" alt="{{image.name}}" />
+	{% endfor %}
+	<h2>Kevin Muncie</h2>
+	<p>kevin@kmuncie.com</p>
+	<p>817-350-6116</p>
+</section>
+{% else %}
+<section class="contact clearfix">
+	<!-- We're on 'index', so we must call simply 'avatars' -->
+	{% for image in avatars %}
+	<img src="{{image.path}}" alt="{{image.name}}" />
+	{% endfor %}
+	<h2>Kevin Muncie</h2>
+	<p>kevin@kmuncie.com</p>
+	<p>817-350-6116</p>
+</section>
+{% endif %}
+
+

@@ -1,0 +1,16 @@
+{% include "shared/header" %}
+
+<h2>{{ headline }}</h2>
+
+{{ body }}
+
+{% for item in children %}
+  <section class="portfolio-item">
+    <h3><a href="{{item.permalink}}">{{ item.name }}</a></h3>
+    <p class="skills">{{ item.skills | join:' • ' }}</p>
+
+    {{ item.summary }}
+  </section>
+{% endfor %}
+
+{% include "shared/footer" %}

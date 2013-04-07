@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include "shared/head" %}
-  <body id="{{slug}}">
-    <div id="main">
-      {% include "shared/nav" %}
+      {% include "shared/header" %}
 
-      {% include "shared/header" %}	
-	  
-	  {% include "shared/contact" %}
+      {{ body }}	
+
+      {% for page in siblings %}
+          {% for item in page.children limit:2 %}
+            <section class="{{page.slug}}-item">
+              <h3>{{ item.name }}</h3>
+              {% if item.skills %}
+                <p class="skills">{{ item.skills | join:' • ' }}</p>
+              {% endif %}
+
+              {{ item.summary }}
+            </section>
+          {% endfor %}
+      {% endfor %}
 
       {% include "shared/footer" %}
-    </section>
-    <!-- {% include "shared/analytics" %} -->
-  </body>
-</html>

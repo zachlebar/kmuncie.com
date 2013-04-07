@@ -1,14 +1,5 @@
-:title: "Portfolio"
-:summary: |
+:name: "Moore Mosquito Misters"
+:skills: ["Design", "Development"]
+:description: |
   Donec gravida posuere arcu. Nulla facilisi. Phasellus imperdiet. Vestibulum at metus. Integer euismod. Nullam placerat rhoncus sapien. Ut euismod. Praesent libero. Morbi pellentesque libero sit amet ante. Maecenas tellus. Maecenas erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas
-  
-:items: 
- -
-  :name: "Search Kea"
-  :skills: ["Founder", "Design", "Front-end Development"]
- -
-  :name: "Eat Prescott"
-  :skills: ["Founder", "Design", "Development"]
- -
-  :name: "Moore Mosquito Misters"
-  :skills: ["Design", "Development"]
+

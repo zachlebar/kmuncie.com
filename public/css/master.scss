@@ -5,3 +5,85 @@
  * kmuncie.com
  *
  ---------------------------------------------------------------------------------- */
+
+ // COLORS 
+
+ $yellow: rgba(246, 185, 47, 1.0);
+ $orange: rgba(229, 108, 47, 1.0);
+ $green: rgba(145, 185, 67, 1.0);
+
+ $home: $yellow;
+ $portfolio: $orange;
+ $adventures: $green;
+
+
+ body {
+ 	background: url("../img/groovepaper.png");
+
+ 	font-family: 'Lato', 'Helvetica', sans-serif;
+ 	font-size: 14px;
+ 	line-height: 1.3em;
+ 	color: #444;
+ }
+
+ h1 {
+ 	font-size: 3.2em;
+ }
+
+ h2 {
+ 	font-size: 2.4em;
+ }
+
+ h3 {
+ 	font-size: 1.8em;
+ }
+
+ nav {
+ 	li {
+ 		float: left;
+ 		margin: 2em 3em 2em 0;
+ 	
+ 		a {
+ 			text-transform: uppercase;
+ 			letter-spacing: 0.3em;
+ 			text-decoration: none;
+ 		}
+ 	}
+ }
+
+ header {
+ 	h1#logo {
+ 		height: 60px;
+
+ 		a {
+ 			img {
+ 				display: block;
+ 				
+ 				max-width: 100%;
+ 				max-height: 100%;
+ 			}
+ 		}
+ 	}
+ }
+
+ .contact {
+ 	img {
+ 		max-width: 150px;
+ 		border-radius: 75px;
+
+ 		float: left;
+ 	}
+ }
+
+ // CLEARFIX
+
+ .clearfix:before, .clearfix:after { content: ""; display: table; }
+ .clearfix:after { clear: both; }
+ .clearfix { *zoom: 1; }
+
+ @media (min-width: 1382px) {
+ 	#main {
+ 		width: 45%;
+ 		margin: 0 auto;
+ 	}
+ }
